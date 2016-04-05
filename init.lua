@@ -1,4 +1,4 @@
-local wielding_only = false
+local wielding_only = true
 
 local players = {}
 
@@ -19,6 +19,7 @@ end)
 
 --wielding_light returns 0 for no light; 1 for regular light.  Outside of this function we don't care what's being wielded, carried or worn, just what needs to be done.
 function wielding_light(pinfo)
+
 	if (wielding_only) then
 		local wielded_item = pinfo.mt_player:get_wielded_item():get_name()
 		if ((wielded_item == "default:torch") or (wielded_item == "walking_light:pick_mese")) then
